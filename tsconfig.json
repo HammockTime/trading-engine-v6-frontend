@@ -14,8 +14,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["src"],
-  "references": []
+    "noFallthroughCasesInSwitch": true,
+   
+    // Add these two lines:
+  "baseUrl": ".",
+  "paths": {
+    "@/*": ["src/*"]
+  }
 }
