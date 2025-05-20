@@ -1,13 +1,12 @@
 import React from 'react';
-import { useApi } from '@/lib/api-context';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './assets/index.css';
 
-// Main.tsx file for the v6 trading platform
-const main = () => {
-  return (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-};
+// Render the App to the DOM
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-export default main;
