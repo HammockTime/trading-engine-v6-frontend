@@ -1,10 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import React from 'react';
+import { useApi } from '@/lib/api-context';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// Main.tsx file for the v6 trading platform
+const main = () => {
+  return (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+};
+
+export default main;
