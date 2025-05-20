@@ -231,11 +231,11 @@ const StrategyGuidesPage = () => {
             <div>
               <h4 className="font-medium mb-2">Trading Rules</h4>
               <ul className="text-sm space-y-1">
-                <li>• Strong Bullish (>30): Aggressive long positions with wider targets</li>
+                <li>• Strong Bullish (&gt;30): Aggressive long positions with wider targets</li>
                 <li>• Bullish (10-30): Standard long positions</li>
                 <li>• Neutral (-10 to 10): Avoid trading or use reduced position size</li>
                 <li>• Bearish (-30 to -10): Standard short positions</li>
-                <li>• Strong Bearish (<-30): Aggressive short positions with wider targets</li>
+                <li>• Strong Bearish (&lt;-30): Aggressive short positions with wider targets</li>
               </ul>
             </div>
           </div>
