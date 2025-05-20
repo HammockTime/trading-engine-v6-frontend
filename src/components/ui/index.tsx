@@ -178,3 +178,23 @@ export function Switch({ className = '', ...props }) {
     </button>
   );
 }
+
+// ScrollArea component
+export function ScrollArea({ className = '', children, ...props }) {
+  return (
+    <div className={`relative overflow-hidden ${className}`} {...props}>
+      <div className="h-full w-full overflow-auto">{children}</div>
+    </div>
+  );
+}
+
+export function ScrollBar({ className = '', orientation = 'vertical', ...props }) {
+  return (
+    <div
+      className={`flex touch-none select-none ${
+        orientation === 'vertical' ? 'h-full w-2.5 border-l border-l-transparent p-[1px]' : 'h-2.5 border-t border-t-transparent p-[1px]'
+      } ${className}`}
+      {...props}
+    />
+  );
+}
