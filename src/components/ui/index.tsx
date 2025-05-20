@@ -121,3 +121,28 @@ export function SheetDescription({ className = '', children, ...props }) {
 
 // Add any other components that might be needed
 // This approach creates simplified versions of all UI components in one file
+
+// Toast related components and hooks
+export function Toast({ className = '', children, ...props }) {
+  return <div className={`bg-white rounded-md shadow-lg p-4 ${className}`} {...props}>{children}</div>;
+}
+
+export function ToastAction({ className = '', children, ...props }) {
+  return <button className={`inline-flex items-center justify-center rounded-md text-sm font-medium ${className}`} {...props}>{children}</button>;
+}
+
+export function ToastProvider({ children }) {
+  return <>{children}</>;
+}
+
+export function ToastViewport({ className = '', ...props }) {
+  return <div className={`fixed bottom-0 right-0 flex flex-col p-4 gap-2 w-full max-w-sm z-50 ${className}`} {...props} />;
+}
+
+export function useToast() {
+  return {
+    toast: (options) => console.log('Toast:', options),
+    dismiss: (id) => console.log('Dismiss toast:', id),
+    toasts: []
+  };
+}
