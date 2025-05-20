@@ -146,3 +146,22 @@ export function useToast() {
     toasts: []
   };
 }
+
+// Badge component
+export function Badge({ className = '', variant = 'default', children, ...props }) {
+  const variantClasses = {
+    default: 'bg-primary text-primary-foreground',
+    secondary: 'bg-secondary text-secondary-foreground',
+    outline: 'border border-input bg-background',
+    destructive: 'bg-destructive text-destructive-foreground'
+  };
+  
+  return (
+    <span 
+      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${variantClasses[variant] || variantClasses.default} ${className}`} 
+      {...props}
+    >
+      {children}
+    </span>
+  );
+}
