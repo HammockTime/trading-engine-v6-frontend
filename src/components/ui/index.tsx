@@ -165,3 +165,16 @@ export function Badge({ className = '', variant = 'default', children, ...props 
     </span>
   );
 }
+
+// Switch component
+export function Switch({ className = '', ...props }) {
+  return (
+    <button
+      role="switch"
+      className={`relative inline-flex h-6 w-11 items-center rounded-full border-2 border-transparent bg-input transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background data-[state=checked]:bg-primary ${className}`}
+      {...props}
+    >
+      <span className="pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0" />
+    </button>
+  );
+}
