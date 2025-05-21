@@ -87,3 +87,12 @@ export function Progress({ value = 0, className = '', ...props }) {
     </div>
   );
 }
+
+// Fix useToast hook export
+export function useToast() {
+  return {
+    toast: (options) => console.log('Toast:', options),
+    dismiss: (id) => console.log('Dismiss toast:', id),
+    toasts: []
+  };
+}
