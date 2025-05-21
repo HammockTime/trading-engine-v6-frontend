@@ -96,3 +96,8 @@ export function useToast() {
     toasts: []
   };
 }
+
+// Fix Button component export if not already defined
+export function Button({ className = '', children, ...props }) {
+  return <button className={`inline-flex items-center justify-center rounded-md ${className}`} {...props}>{children}</button>;
+}
