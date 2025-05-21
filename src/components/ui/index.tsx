@@ -101,3 +101,27 @@ export function useToast() {
 export function Button({ className = '', children, ...props }) {
   return <button className={`inline-flex items-center justify-center rounded-md ${className}`} {...props}>{children}</button>;
 }
+
+// Fix Sheet component exports if not already defined
+export function Sheet({ children, className = '', ...props }) {
+  return <div className={className} {...props}>{children}</div>;
+}
+
+export function SheetTrigger({ children, className = '', ...props }) {
+  return <button className={className} {...props}>{children}</button>;
+}
+
+export function SheetContent({ children, className = '', side = 'right', ...props }) {
+  const sideClasses = {
+    top: 'inset-x-0 top-0 border-b',
+    right: 'inset-y-0 right-0 border-l',
+    bottom: 'inset-x-0 bottom-0 border-t',
+    left: 'inset-y-0 left-0 border-r',
+  };
+  
+  return (
+    <div className={`fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out ${sideClasses[side]} ${className}`} {...props}>
+      {children}
+    </div>
+  );
+}
