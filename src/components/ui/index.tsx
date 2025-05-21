@@ -125,3 +125,15 @@ export function SheetContent({ children, className = '', side = 'right', ...prop
     </div>
   );
 }
+
+// ScrollArea component
+export function ScrollArea({ className = '', children, ...props }) {
+  return (
+    <div 
+      className={`relative overflow-auto ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}
