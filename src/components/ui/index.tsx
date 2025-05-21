@@ -137,3 +137,38 @@ export function ScrollArea({ className = '', children, ...props }) {
     </div>
   );
 }
+
+// DropdownMenu components
+export function DropdownMenu({ children, ...props }) {
+  return <div {...props}>{children}</div>;
+}
+
+export function DropdownMenuTrigger({ children, className = '', ...props }) {
+  return <button className={className} {...props}>{children}</button>;
+}
+
+export function DropdownMenuContent({ children, className = '', ...props }) {
+  return (
+    <div 
+      className={`z-50 min-w-32 overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}
+
+export function DropdownMenuItem({ children, className = '', ...props }) {
+  return (
+    <button
+      className={`relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground hover:bg-accent hover:text-accent-foreground ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+
+export function DropdownMenuSeparator({ className = '', ...props }) {
+  return <div className={`-mx-1 my-1 h-px bg-muted ${className}`} {...props} />;
+}
