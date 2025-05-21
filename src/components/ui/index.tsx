@@ -74,3 +74,25 @@ export function SliderRange({ className = '', ...props }) {
 export function SliderThumb({ className = '', ...props }) {
   return <div className={`block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${className}`} {...props} />;
 }
+
+// RadioGroup component
+export function RadioGroup({ className = '', ...props }) {
+  return <div className={`grid gap-2 ${className}`} {...props} />;
+}
+
+export function RadioGroupItem({ className = '', children, ...props }) {
+  return (
+    <div className={`flex items-center space-x-2 ${className}`}>
+      <button
+        type="button"
+        className="h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        {...props}
+      >
+        <span className="flex h-full w-full items-center justify-center">
+          <span className="h-2.5 w-2.5 rounded-full bg-current" />
+        </span>
+      </button>
+      {children}
+    </div>
+  );
+}
