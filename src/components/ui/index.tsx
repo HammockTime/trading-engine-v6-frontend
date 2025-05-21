@@ -47,3 +47,30 @@ export function TooltipContent({ className = '', children, ...props }) {
 export function TooltipProvider({ children }) {
   return <>{children}</>;
 }
+
+// Slider component
+export function Slider({ className = '', ...props }) {
+  return (
+    <div
+      className={`relative flex w-full touch-none select-none items-center ${className}`}
+      {...props}
+    >
+      <span className="relative h-2 w-full rounded-full bg-secondary">
+        <span className="absolute h-full rounded-full bg-primary" style={{ width: '50%' }}></span>
+        <span className="block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" style={{ left: '50%', transform: 'translateX(-50%)' }}></span>
+      </span>
+    </div>
+  );
+}
+
+export function SliderTrack({ className = '', ...props }) {
+  return <div className={`relative h-2 w-full rounded-full bg-secondary ${className}`} {...props} />;
+}
+
+export function SliderRange({ className = '', ...props }) {
+  return <div className={`absolute h-full rounded-full bg-primary ${className}`} {...props} />;
+}
+
+export function SliderThumb({ className = '', ...props }) {
+  return <div className={`block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${className}`} {...props} />;
+}
