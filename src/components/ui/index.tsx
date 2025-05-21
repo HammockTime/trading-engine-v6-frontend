@@ -292,3 +292,8 @@ export function GoogleIcon({ className = '', ...props }) {
     </svg>
    );
 }
+
+// Add missing DropdownMenuLabel component
+export function DropdownMenuLabel({ children, className = '', ...props }) {
+  return <div className={`px-2 py-1.5 text-sm font-semibold text-foreground ${className}`} {...props}>{children}</div>;
+}
